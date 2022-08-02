@@ -19,6 +19,11 @@ main{
     display: none;
 }
 
+#scoreShow{
+    display: show;
+    text-align: center;
+}
+
 .quiz{
     text-align: left;
 }
@@ -43,3 +48,4 @@ main{
 .filler{
     display: none;
 }
+

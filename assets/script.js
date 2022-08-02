@@ -22,10 +22,11 @@ var answer = document.querySelector('.answer')
 rightAnswer.textContent = 'Correct!'
 wrongAnswer.textContent = 'Wrong!'
 
-// create new element to link if statement and click
-// var filler = document.querySelector('.filler')
-// var newEl = document.createElement('h2')
-// newEl.textContent = 'right'
+// score and initials
+var scoreBoard = document.querySelector('.scoreBoard')
+var playerScore = document.createElement('h3')
+var playerInitial = document.createElement('h3')
+var showScore = document.querySelector('#score')
 
 
 startGame.addEventListener('click', question)
@@ -164,7 +165,6 @@ function question(){
         }
         }
 
-    
         var timeLeft = 30;
 
             var timeInterval = setInterval(function(){
@@ -172,15 +172,32 @@ function question(){
                 timeCounter.textContent = timeLeft + ' seconds remaining';
                 if (timeLeft < 0 || finishQuiz === true)
                     {clearInterval(timeInterval);
-                    timeCounter.textContent = ''}
+                    timeCounter.textContent = '';
+                    rightAnswer.setAttribute('style', 'display: none');
+                    wrongAnswer.setAttribute('style', 'display: none');
+                    localStorage.setItem('timeLeft', timeLeft) 
+                    score();
+                }
                 
-
+                
             }, 1000)
 
 
-        }
+    }
         gameTimer();
 
 }
 
 
+function score (){
+
+    // var initials = prompt ('Please enter your initials', '');
+    // playerInitial.textContent = initials;
+    // scoreBoard.appendChild(playerInitial)
+
+    var score = localStorage.getItem('timeLeft')
+    playerScore.textContent = score;
+    scoreBoard.appendChild(playerScore);
+
+    showScore.setAttribute('id', 'scoreShow')
+}
