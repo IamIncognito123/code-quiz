@@ -1,0 +1,45 @@
+header {
+    text-align: center;
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.choice{
+    flex-direction: column;
+    color: black;
+}
+
+#score{
+    display: none;
+}
+
+.quiz{
+    text-align: left;
+}
+
+#question1, #question2, #question3{
+    display: none;
+}
+
+
+#question1show{
+    display: show;
+}
+
+#question2show{
+    display: show;
+}
+
+#question3show{
+    display: show;
+}
+
+.filler{
+    display: none;
+}
