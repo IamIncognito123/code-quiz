@@ -16,6 +16,7 @@ var wrongChoice1 = document.querySelectorAll('.wrong1')
 var wrongChoice2 = document.querySelectorAll('.wrong2')
 var wrongChoice3 = document.querySelectorAll('.wrong3')
 
+
 var rightAnswer = document.createElement('h2')
 var wrongAnswer = document.createElement('h2')
 var answer = document.querySelector('.answer')
@@ -24,8 +25,8 @@ wrongAnswer.textContent = 'Wrong!'
 
 // score and initials
 var scoreBoard = document.querySelector('.scoreBoard')
-var playerScore = document.createElement('h3')
-var playerInitial = document.createElement('h3')
+var playerData = document.createElement('h3')
+
 var showScore = document.querySelector('#score')
 
 
@@ -185,19 +186,16 @@ function question(){
 
     }
         gameTimer();
-
 }
-
 
 function score (){
 
-    // var initials = prompt ('Please enter your initials', '');
-    // playerInitial.textContent = initials;
-    // scoreBoard.appendChild(playerInitial)
+    var initials = prompt ('Please enter your initials', '');
+    var score = localStorage.getItem('timeLeft');
 
-    var score = localStorage.getItem('timeLeft')
-    playerScore.textContent = score;
-    scoreBoard.appendChild(playerScore);
+    playerData.textContent = `Player: ${initials} Score: ${score}`;
+    
+    scoreBoard.appendChild(playerData);
 
     showScore.setAttribute('id', 'scoreShow')
 }
